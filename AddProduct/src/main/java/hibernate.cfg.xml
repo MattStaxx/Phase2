@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>       
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/pets</property>
+    <property name="connection.username">jump</property>
+    <property name="connection.password">secret</property>
+    <!--SQL dialect-->
+    <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<property name="current_session_context_class">thread</property>
+	<!-- Update or create DB on startup -->
+	<property name="hbm2ddl.auto">update</property> 
+	<!-- Names the annotated entity class -->
+    <mapping class="com.products.Product"/>
+	 
+  </session-factory>
+</hibernate-configuration>

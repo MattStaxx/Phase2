@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+
+	<class name="com.products.Product" table="products">
+		<id column="ID" name="id"/> 
+            <generator class="increment"/>
+            
+		<property column="NAME" type="string" name="name"/>
+		<property column="COLOR" type="string" name="color"/>
+        <property column="PRICE" type="number" name="price"/>
+		
+	</class>
+</hibernate-mapping>

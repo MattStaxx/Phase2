@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+		id="WebApp_ID" version="4.0">
+		<display-name>AddProduct</display-name>
+
+		<welcome-file-list>
+			<welcome-file>index.jsp</welcome-file>
+		</welcome-file-list>
+
+		<servlet>
+			<display-name>ProductServlet</display-name>
+			<servlet-name>ProductServlet</servlet-name>
+			<servlet-class>com.products.ProductServlet</servlet-class>
+		</servlet>
+		
+		<servlet>
+			<description>
+			</description>
+			<display-name>Success</display-name>
+			<servlet-name>Success</servlet-name>
+			<servlet-class>com.products.Success</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>ProductServlet</servlet-name>
+			<url-pattern>/prods</url-pattern>
+		</servlet-mapping>
+		
+		<servlet-mapping>
+			<servlet-name>ProductServlet</servlet-name>
+			<url-pattern>/addProd</url-pattern>
+		</servlet-mapping>
+		
+		<servlet-mapping>
+			<servlet-name>Success</servlet-name>
+			<url-pattern>/Success</url-pattern>
+		</servlet-mapping>
+		
+	</web-app>
