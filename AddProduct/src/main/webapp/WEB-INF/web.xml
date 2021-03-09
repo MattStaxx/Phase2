@@ -3,6 +3,8 @@
 		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 		id="WebApp_ID" version="4.0">
+		
+		<!-- Typical web.xml file that contains necessary mappings for relevant objects -->
 		<display-name>AddProduct</display-name>
 
 		<welcome-file-list>
@@ -12,7 +14,7 @@
 		<servlet>
 			<display-name>ProductServlet</display-name>
 			<servlet-name>ProductServlet</servlet-name>
-			<servlet-class>com.products.ProductServlet</servlet-class>
+			<servlet-class>com.servlets.ProductServlet</servlet-class>
 		</servlet>
 		
 		<servlet>
@@ -20,7 +22,14 @@
 			</description>
 			<display-name>Success</display-name>
 			<servlet-name>Success</servlet-name>
-			<servlet-class>com.products.Success</servlet-class>
+			<servlet-class>com.servlets.Success</servlet-class>
+		</servlet>
+		<servlet>
+			<description>
+			</description>
+			<display-name>Error</display-name>
+			<servlet-name>Error</servlet-name>
+			<servlet-class>com.servlets.Error</servlet-class>
 		</servlet>
 
 		<servlet-mapping>
@@ -36,6 +45,10 @@
 		<servlet-mapping>
 			<servlet-name>Success</servlet-name>
 			<url-pattern>/Success</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>Error</servlet-name>
+			<url-pattern>/Error</url-pattern>
 		</servlet-mapping>
 		
 	</web-app>

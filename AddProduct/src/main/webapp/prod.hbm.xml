@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- hibernate mapping to point the jsp to the database -->
 <hibernate-mapping>
 
 	<class name="com.products.Product" table="products">

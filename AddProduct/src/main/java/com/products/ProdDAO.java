@@ -1,15 +1,18 @@
 package com.products;
 
 
+import java.math.BigDecimal;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+// Product access object to create a session and carry out a transaction with the database
 public class ProdDAO {
 
-	public static void addProdDetails(int id, String name, String color, double price) {
+	public void addProdDetails(String name, String color, String price) {
 		
 		try {
 			Configuration configuration = new Configuration();
@@ -17,10 +20,9 @@ public class ProdDAO {
 			Session session = sessionFactory.openSession();
 			Transaction transaction = session.beginTransaction();
 			Product prod = new Product();
-			prod.setId(id);
 			prod.setName(name);
 			prod.setColor(color);
-			prod.setPrice(price);
+			prod.setPrice(BigDecimal.valueOf(Double.parseDouble(price)));
 			session.save(prod);
 			transaction.commit();
 			session.close();
