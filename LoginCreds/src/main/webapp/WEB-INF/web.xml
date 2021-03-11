@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+		id="WebApp_ID" version="4.0">
+		<display-name>LoginCreds</display-name>
+		
+		<welcome-file-list>
+			<welcome-file>index.jsp</welcome-file>
+		</welcome-file-list>
+  
+		<servlet>
+			<display-name>RegisterServlet</display-name>
+			<servlet-name>RegisterServlet</servlet-name>
+			<servlet-class>matt.serv.RegisterServlet</servlet-class>
+		</servlet>
+		<servlet>
+			<display-name>VerifyServlet</display-name>
+			<servlet-name>VerifyServlet</servlet-name>
+			<servlet-class>matt.serv.VerifyServlet</servlet-class>
+		</servlet>
+		<servlet>
+			<display-name>Success</display-name>
+			<servlet-name>Success</servlet-name>
+			<servlet-class>matt.serv.Success</servlet-class>
+		</servlet>
+		<servlet>
+			<description>
+			</description>
+			<display-name>Welcome</display-name>
+			<servlet-name>Welcome</servlet-name>
+			<servlet-class>matt.serv.Welcome</servlet-class>
+		</servlet>
+		<servlet>
+			<description>
+			</description>
+			<display-name>UserExists</display-name>
+			<servlet-name>UserExists</servlet-name>
+			<servlet-class>matt.serv.UserExists</servlet-class>
+		</servlet>
+		
+		<servlet-mapping>
+			<servlet-name>RegisterServlet</servlet-name>
+			<url-pattern>/register</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>VerifyServlet</servlet-name>
+			<url-pattern>/login</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>Success</servlet-name>
+			<url-pattern>/Success</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>Welcome</servlet-name>
+			<url-pattern>/welcome</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>UserExists</servlet-name>
+			<url-pattern>/UserExists</url-pattern>
+		</servlet-mapping>
+		
+	</web-app>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- 
+<web-app>
+
+		<welcome-file-list>
+			<welcome-file>index.jsp</welcome-file>
+		</welcome-file-list>
+  <display-name>Login Creds</display-name>
+  
+  <servlet>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<display-name>RegisterServlet</display-name>
+  	<description></description>
+  	<servlet-class>matt.serv.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VerifyServlet</servlet-name>
+  	<display-name>VerifyServlet</display-name>
+  	<description></description>
+  	<servlet-class>matt.serv.VerifyServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Success</servlet-name>
+  	<display-name>Success</display-name>
+  	<description></description>
+  	<servlet-class>matt.serv.Success</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VerifyServlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Success</servlet-name>
+  	<url-pattern>/Success</url-pattern>
+  </servlet-mapping> -->
+

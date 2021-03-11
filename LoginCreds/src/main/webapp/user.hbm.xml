@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+
+	<class name="matt.creds.User" table="login_creds">
+		<id column="ID" name="id"/> 
+            <generator class="increment"/>
+            
+		<property column="NAME" type="string" name="name"/>
+		<property column="PASSWORD" type="string" name="password"/>
+		
+	</class>
+</hibernate-mapping>
