@@ -30,13 +30,13 @@ public class VerifyServlet extends HttpServlet {
             Session session = factory.openSession();
             
             if(UserDAO.verifyDetails(name, password)) {  
-                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");  
-                rd.forward(request,response);  
+                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
+                request.setAttribute("name", name);
+                rd.forward(request, response); 
             }  
             else {    
-        	    response.setContentType("text/html");
                 RequestDispatcher rd = request.getRequestDispatcher("loginError.jsp");  
-                rd.include(request,response);
+                rd.include(request, response);
             }  
             out.close();
             session.close();  

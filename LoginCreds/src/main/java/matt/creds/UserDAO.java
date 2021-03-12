@@ -1,17 +1,11 @@
 package matt.creds;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.servlet.ServletException;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
-import matt.serv.RegisterServlet;
 
 public class UserDAO {
 
@@ -28,8 +22,6 @@ public class UserDAO {
 			session.save(user);
 			transaction.commit();
 			session.close();
-			System.out.println("user added");
-			
 		} catch(HibernateException e) {
 			System.out.println(e.getMessage());
 			System.out.println("error");
@@ -39,18 +31,21 @@ public class UserDAO {
 	public boolean checkForUser(String name) {
 
 		boolean status = true;
-		Configuration configuration = new Configuration();
-		SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		Transaction transaction = session.beginTransaction();
-		User user = new User();
-		List<User> check = session.createQuery("from User where name =" + "'" + name + "'", User.class).list();
-		for(User u : check) {
-			if(u.getName().contains(name)) {
-				status = false;
-				System.out.println("user already exists");
-			} else status = true;
-		}
+		try {
+			Configuration configuration = new Configuration();
+			SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
+			Session session = sessionFactory.openSession();
+			Transaction transaction = session.beginTransaction();
+			User user = new User();
+			List<User> check = session.createQuery("from User where name =" + "'" + name + "'", User.class).list();
+			for(User u : check) {
+				if(u.getName().contains(name)) {
+					status = false;
+				} else status = true;
+			}
+		} catch(HibernateException e) {
+			System.out.println(e.getMessage());
+		}	
 		return status;
 	}
 	

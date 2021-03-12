@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "login_creds")
 
 public class User {
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
     private int id;
@@ -20,16 +21,6 @@ public class User {
 	
 	@Column(name = "password")
     private String password;
-        
-        public User() {
-                
-        }
-        
-        public User(String name, String password) {
-        	
-            this.name = name;
-            this.password = password;
-        }
         
         public String getName() { return this.name;}
         public String getPassword() { return this.password;}

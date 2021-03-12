@@ -16,7 +16,7 @@
 		</style>
 	<body>
 		<div>
-			<h2 style="text-align:center">Welcome!</h2><br> <!-- retrieve username for this message  -->
+			<h2 style="text-align:center">Welcome, ${name} ! </h2><br>
 	 			<p style="text-align:center"><a href="index.jsp">Back to Main Page</a></p>
 	 	</div>
 	</body>
