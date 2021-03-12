@@ -35,10 +35,10 @@ public class RegisterServlet extends HttpServlet {
 			UserDAO userDAO = new UserDAO();
 			if(userDAO.checkForUser(name) == true) {
 				userDAO.addUserDetails(name, password);
-	            RequestDispatcher rd = request.getRequestDispatcher("Success");  
+	            RequestDispatcher rd = request.getRequestDispatcher("regSuccess.jsp");  
 	        	rd.forward(request,response);
 			} else {
-                RequestDispatcher rd = request.getRequestDispatcher("UserExists");  
+                RequestDispatcher rd = request.getRequestDispatcher("userExists.jsp");  
             	rd.forward(request,response);  
 			}  
             session.close(); 

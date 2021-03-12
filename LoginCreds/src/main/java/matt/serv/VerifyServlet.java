@@ -28,14 +28,15 @@ public class VerifyServlet extends HttpServlet {
             String password = request.getParameter("password");  
             SessionFactory factory = HibernateUtil.getSessionFactory();
             Session session = factory.openSession();
+            
             if(UserDAO.verifyDetails(name, password)) {  
-                RequestDispatcher rd = request.getRequestDispatcher("welcome");  
+                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");  
                 rd.forward(request,response);  
             }  
             else {    
-                RequestDispatcher rd = request.getRequestDispatcher("loginUser.jsp");  
-                rd.include(request,response);  
-                out.print("Username or password error...try again");
+        	    response.setContentType("text/html");
+                RequestDispatcher rd = request.getRequestDispatcher("loginError.jsp");  
+                rd.include(request,response);
             }  
             out.close();
             session.close();  

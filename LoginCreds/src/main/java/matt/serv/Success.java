@@ -16,14 +16,23 @@ public class Success extends HttpServlet {
     	
         super();
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-		out.println("<center>Registration Successful</center></br>");
-		out.println("<center><html><body></center></br>");
-		out.println("<center><a href=\"index.jsp\">Back to Registration Page</a></center></br>");
-		out.println("<center><a href=\"index.jsp\">Proceed to Login Page</a></center></br>");
-        out.println("</body></html>");
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//	    response.setContentType("text/html");  
+//		PrintWriter out = response.getWriter();
+//		
+//        out.println("<html><body background='Success.jpg'>");
+//		out.println("<center>Registration Successful</center></br>");
+//		out.println("<center><html><body></center></br>");
+//		out.println("<center><a href=\"index.jsp\">Back to Registration Page</a></center></br>");
+//		out.println("<center><a href=\"index.jsp\">Proceed to Login Page</a></center></br>");
+//        out.println("</body></html>");
+//        
+//        out.close();
+//	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+		
+		doGet(request, response);
 	}
 }
