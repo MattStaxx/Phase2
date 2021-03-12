@@ -28,3 +28,4 @@ LoginCreds ->
                 userExists.jsp
                 welcome.jsp
                 (several .jpeg files used in the UI)
+
